@@ -58,3 +58,12 @@ Then /I should (not )?see the following movies: (.*)/ do |not_, movies|
     step %(I should #{not_}see "#{movie}")
   end
 end
+
+
+
+
+Then (/^I should not see movies rated: G, PG\-(\d+)$/) do |rating_list|
+  rating_list.split(", ").each do |text|
+    (page.body=~/\Atext\z/) == nil 
+  end
+end
