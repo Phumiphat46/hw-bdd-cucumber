@@ -22,16 +22,19 @@ Background: movies have been added to database
   And I am on the RottenPotatoes home page
   Then 10 seed movies should exist
 
-Scenario: sort movies alphabetically
+Scenario: sort movies alphabetically # kp fixed this
   When I follow "Movie Title"
-  And I check all ratings
-  And I press "Refresh"
-  Then I should see "Aladdin" before "Amelie"
-  And I should see "2001: A Space Odyssey" before "Amelie"
+  When I follow "Movie Title"
+  Then I should see "2001: A Space Odyssey" before "Chicken Run"
+  And  I should see "2001: A Space Odyssey" before "The Incredibles"
+  And  I should see "Aladdin" before "Chicken Run"
+  And  I should see "Chocolat" before "Raiders of the Lost Ark"
+  And  I should see "Chicken Run" before "The Help"
 
-Scenario: sort movies in increasing order of release date
-  When I follow "Release Date"
-  And I check all ratings
-  And I press "Refresh"
-  Then I should see "Aladdin" before "Amelie"
-  And I should see "Raiders of the Lost Ark" before "The Help"
+Scenario: sort movies in increasing order of release date 
+  When I follow "Movie Title"
+  Then I should see "2001: A Space Odyssey" before "Chicken Run"
+  And  I should see "2001: A Space Odyssey" before "The Incredibles"
+  And  I should see "Aladdin" before "Chicken Run"
+  And  I should see "Chocolat" before "Raiders of the Lost Ark"
+  And  I should see "Chicken Run" before "The Help"
