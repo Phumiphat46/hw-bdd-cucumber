@@ -14,10 +14,8 @@ module NavigationHelpers
     case page_name
     
     when /^the (RottenPotatoes )?home\s?page$/ then '/movies' # Kp fixed this (part 1 warm up)
-    
-    when /^the movies page$/ then '/movies'
-    
     when /^the Create New Movie page/ then '/movies/new'
+    when /^the movies page$/ then '/movies'
     
     when /^the "Search Results" page$/ then 'movies/add'
       
